@@ -38,7 +38,7 @@ class CopyInManagerDriver(private val driver: JdbcDriver, private val file: Read
 fun main() {
     val driver = getSqlDriver()
     val sample = Sample(driver)
-    val copySample = Sample(CopyInManagerDriver(driver, Path("csv/Kickstarter.csv").reader() ))
+    val copySample = Sample(CopyInManagerDriver(driver, Path("csv/Kickstarter.csv").reader()))
     copySample.kickStarterQueries.copy()
     println(sample.kickStarterQueries.select().executeAsList().joinToString("\n"))
 }
