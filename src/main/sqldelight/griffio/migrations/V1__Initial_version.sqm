@@ -1,0 +1,27 @@
+CREATE TABLE Kickstarter_Data (
+    pledged NUMERIC,
+    fx_rate NUMERIC,
+    backers_count INTEGER,
+    launched_at NUMERIC,
+    deadline NUMERIC,
+    goal INTEGER
+);
+
+CREATE TABLE Regions (
+  id INTEGER,
+  name VARCHAR(255)
+);
+
+CREATE TABLE SalesPeople (
+  id INTEGER,
+  full_name VARCHAR(255),
+  home_region_id INTEGER
+);
+
+CREATE TABLE Sales (
+  id INTEGER,
+  amount NUMERIC,
+  product_id INTEGER,
+  salesperson_id INTEGER,
+  region_id INTEGER
+);

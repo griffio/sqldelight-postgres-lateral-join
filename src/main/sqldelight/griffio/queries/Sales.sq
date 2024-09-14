@@ -1,0 +1,15 @@
+select:
+SELECT
+  sp.id salesperson_id,
+  sp.full_name,
+  sp.home_region_id,
+  rg.name AS home_region_name,
+  home_region_sales.total_sales
+FROM SalesPeople sp
+  JOIN Regions rg ON sp.home_region_id = rg.id
+  JOIN LATERAL (
+    SELECT SUM(amount) AS total_sales
+    FROM Sales s
+    WHERE s.salesperson_id = sp.id
+      AND s.region_id = sp.home_region_id
+  ) home_region_sales ON TRUE;
