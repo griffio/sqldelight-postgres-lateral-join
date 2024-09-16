@@ -1,3 +1,33 @@
+insert {
+
+INSERT INTO Regions (id, name) VALUES
+(1, 'North'),
+(2, 'South'),
+(3, 'East'),
+(4, 'West'),
+(5, 'Central');
+
+INSERT INTO SalesPeople (id, full_name, home_region_id) VALUES
+(1, 'John Doe', 1),
+(2, 'Jane Smith', 2),
+(3, 'Bob Johnson', 3),
+(4, 'Alice Brown', 4),
+(5, 'Charlie Davis', 5);
+
+INSERT INTO Sales (id, amount, product_id, salesperson_id, region_id) VALUES
+(1, 1000.00, 101, 1, 1),
+(2, 1500.50, 102, 2, 2),
+(3, 2000.75, 103, 3, 3),
+(4, 1200.25, 104, 4, 4),
+(5, 1800.00, 105, 5, 5),
+(6, 2200.50, 106, 1, 2),
+(7, 1300.75, 107, 2, 3),
+(8, 1700.25, 108, 3, 4),
+(9, 1900.00, 109, 4, 5),
+(10, 2100.50, 110, 5, 1);
+
+}
+
 select:
 SELECT
   sp.id salesperson_id,
